@@ -11,14 +11,14 @@
 </head>
 <body>
     <sql:setDataSource
-        var="snapshot"
+        var="DB"
         driver="com.mysql.jdbc.Driver"
         url="jdbc:mysql://localhost:3306/test"
         user="root" password="root"
     />
      
- <sql:query dataSource="${snapshot}" var="result">
-SELECT * from products;
+ <sql:query dataSource="${DB}" var="result">
+SELECT * FROM test.products;
 </sql:query>
      
     <div align="center">
@@ -26,24 +26,24 @@ SELECT * from products;
             <caption><h2>List of Products</h2></caption>
             <tr>
                 <th>Product Name</th>
-                <th>Product Name</th>
                 <th>Product Image</th>
                 <th>Price</th>
                 <th>Product Picture</th>
                 <th>Inventory</th>
                 <th>Purchase Amount</th>
             </tr>
-            <c:forEach var="row" items="${results.rows}">
+            <c:forEach items="${result.rows}"  var="rows">
             <form name="myForm" action="cart.jsp" method="post">
                  <tr>
                     <td><c:out value="${rows.productid}" /></td>
-                    <td><c:out value="${row.ProductName}" /></td>
-                    <td><c:out value="${row.ProductImage}" /></td>
-                    <td><c:out value="${row.Price}" /></td>
-                    <td><c:out value="${row.Inventory}" /></td>
+                    <td><c:out value="${rows.ProductName}" /></td>
+                    <td><img src="<c:out value="${rows.ProductImage}" />" style="width:200px;height:200px;"></img></td>
+                    <td><c:out value="${rows.Price}" /></td>
+                    <td><c:out value="${rows.Inventory}" /></td>
                     
                     <td><select name="Amount"> 
                     
+                    <option>0</option>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -54,11 +54,7 @@ SELECT * from products;
                     <option>8</option>
                     <option>9</option>
                     <option>10</option>
-                    <option>11</option>
-                    <option>12</option>
-                    <option>13</option>
-                    <option>14</option>
-                    <option>15</option>
+                 
                     
                     </select></td>
                 </tr>
