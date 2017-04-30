@@ -25,12 +25,11 @@ SELECT * FROM test.products;
         <table border="1" cellpadding="5">
             <caption><h2>List of Products</h2></caption>
             <tr>
+                <th>Product ID</th>
                 <th>Product Name</th>
-                <th>Product Image</th>
+                <th>Image</th>
                 <th>Price</th>
-                <th>Product Picture</th>
                 <th>Inventory</th>
-                <th>Purchase Amount</th>
             </tr>
             <c:forEach items="${result.rows}"  var="rows">
             <form name="myForm" action="cart.jsp" method="post">
