@@ -43,6 +43,7 @@ SELECT * FROM test.products;
                     
                     <td><select name="Amount"> 
                     
+                    <option>0</option>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
