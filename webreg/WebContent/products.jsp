@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>   
+	 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -11,15 +11,15 @@
 </head>
 <body>
     <sql:setDataSource
-        var="myDS"
+        var="snapshot"
         driver="com.mysql.jdbc.Driver"
         url="jdbc:mysql://localhost:3306/test"
         user="root" password="root"
     />
      
-    <sql:query var="listProducts"   dataSource="${myDS}">
-        SELECT * FROM products;
-    </sql:query>
+ <sql:query dataSource="${snapshot}" var="result">
+SELECT * from products;
+</sql:query>
      
     <div align="center">
         <table border="1" cellpadding="5">
@@ -33,14 +33,14 @@
                 <th>Inventory</th>
                 <th>Purchase Amount</th>
             </tr>
-            <c:forEach var="products" items="${listproducts.rows}">
+            <c:forEach var="row" items="${results.rows}">
             <form name="myForm" action="cart.jsp" method="post">
                  <tr>
-                    <td><c:out value="${products.productid}" /></td>
-                    <td><c:out value="${products.ProductName}" /></td>
-                    <td><c:out value="${products.ProductImage}" /></td>
-                    <td><c:out value="${products.Price}" /></td>
-                    <td><c:out value="${products.Inventory}" /></td>
+                    <td><c:out value="${rows.productid}" /></td>
+                    <td><c:out value="${row.ProductName}" /></td>
+                    <td><c:out value="${row.ProductImage}" /></td>
+                    <td><c:out value="${row.Price}" /></td>
+                    <td><c:out value="${row.Inventory}" /></td>
                     
                     <td><select name="Amount"> 
                     

@@ -21,7 +21,7 @@ if(rs.next())
 { 
 if(rs.getString(2).equals(pwd)) 
 { 
-out.println("welcome"+userid); 
+out.println("welcome " +userid); 
 
 } 
 else 
@@ -31,6 +31,6 @@ out.println("Invalid password try again");
 } 
 else 
 %>
-<a href="products.jsp">Look at our Products</a>
+<a href="products.jsp"> Look at our Products</a>
 </body>
 </html>
