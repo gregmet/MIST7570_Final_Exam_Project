@@ -14,10 +14,10 @@
         var="myDS"
         driver="com.mysql.jdbc.Driver"
         url="jdbc:mysql://localhost:3306/mydb"
-        user="root" password="secret"
+        user="root" password="root"
     />
      
-    <sql:query var="listUsers"   dataSource="${myDS}">
+    <sql:query var="listProducts"   dataSource="${myDS}">
         SELECT * FROM users;
     </sql:query>
      
