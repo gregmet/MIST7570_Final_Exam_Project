@@ -31,6 +31,6 @@ out.println("Invalid password try again");
 } 
 else 
 %>
-<a href="index.html">Home</a>
+<a href="products.jsp">Look at our Products</a>
 </body>
 </html>
