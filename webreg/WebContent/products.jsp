@@ -13,7 +13,7 @@
     <sql:setDataSource
         var="myDS"
         driver="com.mysql.jdbc.Driver"
-        url="jdbc:mysql://localhost:3306/mydb"
+        url="jdbc:mysql://localhost:3306/test"
         user="root" password="root"
     />
      
