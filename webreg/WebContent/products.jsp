@@ -18,7 +18,7 @@
     />
      
     <sql:query var="listProducts"   dataSource="${myDS}">
-        SELECT * FROM users;
+        SELECT * FROM products;
     </sql:query>
      
     <div align="center">
@@ -26,18 +26,22 @@
             <caption><h2>List of Products</h2></caption>
             <tr>
                 <th>Product Name</th>
+                <th>Product Name</th>
+                <th>Product Image</th>
                 <th>Price</th>
                 <th>Product Picture</th>
-                <th>Qunantity Remaining</th>
+                <th>Inventory</th>
                 <th>Purchase Amount</th>
             </tr>
-            <c:forEach var="user" items="${listUsers.rows}">
+            <c:forEach var="products" items="${listproducts.rows}">
             <form name="myForm" action="cart.jsp" method="post">
                  <tr>
-                    <td><c:out value="${user.id}" /></td>
-                    <td><c:out value="${user.name}" /></td>
-                    <td><c:out value="${user.email}" /></td>
-                    <td><c:out value="${user.profession}" /></td>
+                    <td><c:out value="${products.productid}" /></td>
+                    <td><c:out value="${products.ProductName}" /></td>
+                    <td><c:out value="${products.ProductImage}" /></td>
+                    <td><c:out value="${products.Price}" /></td>
+                    <td><c:out value="${products.Inventory}" /></td>
+                    
                     <td><select name="Amount"> 
                     
                     <option>1</option>
