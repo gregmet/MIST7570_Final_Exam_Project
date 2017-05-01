@@ -33,7 +33,7 @@ SELECT * FROM test.products;
 </sql:query>
      
     <div align="center">
-        <table class="table table-striped" border="1" cellpadding="5">
+        <table class="table table-striped"  border="1" cellpadding="5">
             <caption><h2>List of Products</h2></caption>
             <tr>
                 <th>Product ID</th>

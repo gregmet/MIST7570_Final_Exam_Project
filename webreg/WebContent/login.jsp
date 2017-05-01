@@ -17,7 +17,7 @@
 <title>MIST7570 Final Project Login JSP</title>
 </head>
 <body>
-<img src="images/jaymargreg.jpg" style="height:200px; padding-left: 29%;"></img>
+<img src="images/jaymargreg.jpg"  style="height:200px; padding-left: 29%;"></img>
 <div class="welcomeClass" style="padding-left: 40%; padding-top: 5%; ">
 	<%@ page import="java.sql.*"%>
 	<%@ page import="javax.sql.*"%>
