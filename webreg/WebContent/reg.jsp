@@ -7,6 +7,7 @@
 <title>MIST7570 Final Project Reg JSP</title>
 </head>
 <body>
+<img src="images/jaymargreg.jpg" style="height:200px; padding-left: 29%;"></img>
 <%@ page import ="java.sql.*" %>
 <%@ page import ="javax.sql.*" %>
 <%

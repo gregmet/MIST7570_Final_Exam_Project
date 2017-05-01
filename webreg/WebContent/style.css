@@ -7,5 +7,17 @@
 
 .loginForm{
 padding-left: 40%;
-padding-top: 15%;
+padding-top: 5%;
+}
+.indexClass{
+padding-left: 36%;
+padding-top: 5%;
+}
+.indexHeader{
+	color: blue;
+}
+
+.regClass{
+padding-left: 40%;
+padding-top: 5%;
 }
