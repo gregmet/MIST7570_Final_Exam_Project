@@ -10,7 +10,7 @@ padding-left: 40%;
 padding-top: 5%;
 }
 .indexClass{
-padding-left: 36%;
+padding-left: 36.5%;
 padding-top: 5%;
 }
 .indexHeader{
@@ -20,4 +20,9 @@ padding-top: 5%;
 .regClass{
 padding-left: 40%;
 padding-top: 5%;
+}
+
+.welcomeClass{
+padding-left: 40% !important;
+padding-top: 5% !important;	
 }

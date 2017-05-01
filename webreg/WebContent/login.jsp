@@ -18,6 +18,7 @@
 </head>
 <body>
 <img src="images/jaymargreg.jpg" style="height:200px; padding-left: 29%;"></img>
+<div class="welcomeClass" style="padding-left: 40%; padding-top: 5%; ">
 	<%@ page import="java.sql.*"%>
 	<%@ page import="javax.sql.*"%>
 	<%
@@ -28,20 +29,22 @@ Class.forName("com.mysql.jdbc.Driver");
 java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","root"); 
 Statement st= con.createStatement(); 
 ResultSet rs=st.executeQuery("select * from users where userid='"+userid+"'"); 
+ 
 if(rs.next()) 
 { 
 if(rs.getString(2).equals(pwd)) 
 { 
-out.println("welcome " +userid); 
+out.println("Welcome " +userid); 
 
 } 
 else 
 { 
-out.println("Invalid password try again"); 
+out.println("Invalid Password try again"); 
 } 
 } 
 else 
 %>
 <a  class="goHere" href="products.jsp"> Look at our Products</a>
+</div>
 </body>
 </html>

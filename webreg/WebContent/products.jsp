@@ -33,7 +33,7 @@ SELECT * FROM test.products;
 </sql:query>
      
     <div align="center">
-        <table border="1" cellpadding="5">
+        <table class="table table-striped" border="1" cellpadding="5">
             <caption><h2>List of Products</h2></caption>
             <tr>
                 <th>Product ID</th>
@@ -41,6 +41,7 @@ SELECT * FROM test.products;
                 <th>Image</th>
                 <th>Price</th>
                 <th>Inventory</th>
+                <th>Quantity</th>
             </tr>
             <c:forEach items="${result.rows}"  var="rows">
             <form name="myForm" action="cart.jsp" method="post">
