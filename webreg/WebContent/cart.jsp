@@ -27,7 +27,7 @@
         var="DB"
         driver="com.mysql.jdbc.Driver"
         url="jdbc:mysql://localhost:3306/test"
-        user="root" password="password"
+        user="root" password="root"
     />
      
  <sql:query dataSource="${DB}" var="result">
@@ -43,6 +43,7 @@ SELECT * FROM test.shoppingcart;
                 <th>Image</th>
                 <th>Price</th>
                 <th>Inventory</th>
+                <th>Remove From Cart?</th>
             </tr>
             <c:forEach items="${result.rows}"  var="rows">
             <form name="myForm" action="cart.jsp" method="post">
@@ -52,6 +53,7 @@ SELECT * FROM test.shoppingcart;
                     <td><img src="<c:out value="${rows.ProductImage}" />" style="width:200px;height:200px;"></img></td>
                     <td><c:out value="${rows.Price}" /></td>
                     <td><c:out value="${rows.Inventory}" /></td>
+                    <td></td>
                     
                 
                 </tr>

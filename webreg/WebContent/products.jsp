@@ -20,7 +20,7 @@
 <title>MIST7570 Final Project Products</title>
 </head>
 <body>
-<img src="images/jaymargreg.jpg" style="height:200px; padding-left: 29%;"></img>
+<img src="images/jaymargreg.jpg" style="height:200px; padding-left: 27%;"></img>
     <sql:setDataSource
         var="DB"
         driver="com.mysql.jdbc.Driver"
@@ -42,17 +42,18 @@ SELECT * FROM test.products;
                 <th>Price</th>
                 <th>Inventory</th>
                 <th>Quantity</th>
+                <th>Add to Cart?</th>
             </tr>
             <c:forEach items="${result.rows}"  var="rows">
             <form name="myForm" action="cart.jsp" method="post">
                  <tr>
-                    <td><c:out value="${rows.productid}" /></td>
-                    <td><c:out value="${rows.ProductName}" /></td>
-                    <td><img src="<c:out value="${rows.ProductImage}" />" style="width:200px;height:200px;"></img></td>
-                    <td><c:out value="${rows.Price}" /></td>
+                    <td name="prodId"><c:out value="${rows.productid}" /></td>
+                    <td name="prodName"><c:out value="${rows.ProductName}" /></td>
+                    <td name="prodImg"><img src="<c:out value="${rows.ProductImage}" />" style="width:200px;height:200px;"></img></td>
+                    <td name="prodPrice"><c:out value="${rows.Price}" /></td>
                     <td><c:out value="${rows.Inventory}" /></td>
                     
-                    <td><select name="Amount"> 
+                    <td name="prodQuan"><select name="Amount"> 
                     
                     <option>0</option>
                     <option>1</option>
@@ -68,12 +69,10 @@ SELECT * FROM test.products;
                  
                     
                     </select></td>
+                    <td><input class="btn btn-primary" type="submit" value="Add to Cart" name="submit"/></td>
                 </tr>
             </c:forEach>
         </table>
-        
-        <input type="submit" value="Submit" name="submit"/>
-        
         </form>
     </div>
 </body>
